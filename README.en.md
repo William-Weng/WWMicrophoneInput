@@ -8,46 +8,46 @@
 ![SPM](https://img.shields.io/badge/SPM-supported-brightgreen.svg)
 [![LICENSE](https://img.shields.io/badge/LICENSE-MIT-yellow.svg?style=flat)](https://developer.apple.com/swift/)
 
-一個輕量級的 iOS 麥克風輸入管理器，基於 `AVAudioEngine` 實現，提供簡單易用的 API 來捕捉麥克風的 PCM 音訊數據。
+A lightweight iOS microphone input manager built on `AVAudioEngine`, providing a simple and easy-to-use API for capturing PCM audio data from the microphone.
 
-## 功能特色
+## Features
 
-- **即時麥克風輸入**：透過 `AVAudioEngine` 捕捉高品質的 PCM 音訊緩衝區
-- **靈活的音訊會話配置**：支援自訂 `AVAudioSession` 的 category、mode 與 options
-- **非同步回呼機制**：透過 `@Sendable` 回呼函數即時接收音訊數據
-- **型別安全的錯誤處理**：使用 `WWMicrophoneInputError` 提供明確的錯誤資訊
-- **易於整合**：設計簡潔，可輕鬆整合到語音識別、音訊處理等應用場景
+- **Real-time Microphone Input**: Captures high-quality PCM audio buffers via `AVAudioEngine`
+- **Flexible Audio Session Configuration**: Supports custom `AVAudioSession` category, mode, and options
+- **Asynchronous Callback Mechanism**: Receives audio data in real-time through `@Sendable` callback functions
+- **Type-safe Error Handling**: Uses `WWMicrophoneInputError` to provide clear error information
+- **Easy Integration**: Clean design that can be easily integrated into speech recognition, audio processing, and other application scenarios
 
-## 📦 安裝方式
+## 📦 Installation
 
-### 使用 Swift Package Manager
+### Using Swift Package Manager
 
-在 Xcode 中選擇：
+In Xcode, select:
 
 `File` → `Add Package Dependencies...`
 
-接著輸入套件 repository URL，選擇要使用的版本，並將套件加入 App target。
+Then enter the package repository URL, select the version to use, and add the package to your App target.
 
-如果這是本地套件，也可以在 Xcode 中使用：
+If this is a local package, you can also use in Xcode:
 
 `File` → `Add Package Dependencies...` → `Add Local...`
 
-## 🏗️ 公開 API
+## 🏗️ Public API
 
-| API | 說明 |
+| API | Description |
 | --- | --- |
-| `init(bufferHandler:)` | 建立 WWMicrophoneInput 實體。 |
-| `configure(category:active:)` | 設定音訊工作階段（AVAudioSession）的類別、模式與選項，並設定是否啟用。 |
-| `start()` | 啟動麥克風輸入。 |
-| `stop()` | 停止麥克風輸入。 |
+| `init(bufferHandler:)` | Creates a WWMicrophoneInput instance. |
+| `configure(category:active:)` | Configures the audio session (AVAudioSession) category, mode, and options, and sets whether to activate it. |
+| `start()` | Starts microphone input. |
+| `stop()` | Stops microphone input. |
 
-## 📌 公開屬性
+## 📌 Public Properties
 
-| 名稱 | 說明 |
+| Name | Description |
 | --- | --- |
-| `isRunning` | 是否正在錄音中。 |
+| `isRunning` | Indicates whether recording is in progress. |
 
-## 🧪 簡單範例
+## 🧪 Simple Example
 
 ```swift
 private extension SpeechViewModel {
