@@ -10,7 +10,7 @@
 
 一個輕量級的 iOS 麥克風輸入管理器，基於 `AVAudioEngine` 實現，提供簡單易用的 API 來捕捉麥克風的 PCM 音訊數據。
 
-## 功能特色
+## ✨ 功能特色
 
 - **即時麥克風輸入**：透過 `AVAudioEngine` 捕捉高品質的 PCM 音訊緩衝區
 - **靈活的音訊會話配置**：支援自訂 `AVAudioSession` 的 category、mode 與 options

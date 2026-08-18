@@ -10,7 +10,7 @@
 
 A lightweight iOS microphone input manager built on `AVAudioEngine`, providing a simple and easy-to-use API for capturing PCM audio data from the microphone.
 
-## Features
+## ✨ Features
 
 - **Real-time Microphone Input**: Captures high-quality PCM audio buffers via `AVAudioEngine`
 - **Flexible Audio Session Configuration**: Supports custom `AVAudioSession` category, mode, and options
