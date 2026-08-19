@@ -47,7 +47,7 @@
 | --- | --- |
 | `isRunning` | 是否正在錄音中。 |
 
-## 🧪 簡單範例
+## 🧪 [簡單範例](https://github.com/William-Weng/RealTimeSpeechToText)
 
 ```swift
 private extension SpeechViewModel {

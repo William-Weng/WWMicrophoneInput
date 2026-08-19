@@ -47,7 +47,7 @@ If this is a local package, you can also use in Xcode:
 | --- | --- |
 | `isRunning` | Indicates whether recording is in progress. |
 
-## 🧪 Simple Example
+## 🧪 [Simple Example](https://github.com/William-Weng/RealTimeSpeechToText)
 
 ```swift
 private extension SpeechViewModel {
