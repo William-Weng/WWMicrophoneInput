@@ -16,12 +16,12 @@ public final class WWMicrophoneInput {
     
     private let audioEngine = AVAudioEngine()   // 底層使用的音訊引擎
     
-    private let bufferHandler: @Sendable (AVAudioPCMBuffer) -> Void
+    private let bufferHandler: @Sendable (WWAudioPCMBuffer) -> Void
     
     /// 建立 WWMicrophoneInput 實體
     ///
     /// - Parameter bufferHandler: 當有新的 PCM buffer 可用時呼叫的回呼
-    public init(bufferHandler: @escaping @Sendable (AVAudioPCMBuffer) -> Void) {
+    public init(bufferHandler: @escaping @Sendable (WWAudioPCMBuffer) -> Void) {
         self.bufferHandler = bufferHandler
     }
 }
@@ -89,7 +89,7 @@ private extension WWMicrophoneInput {
         inputNode.removeTap(onBus: 0)
         
         inputNode.installTap(onBus: 0, bufferSize: level.value, format: format) { [bufferHandler] buffer, _ in
-            bufferHandler(buffer)
+            bufferHandler(.init(value: buffer))
         }
         
         audioEngine.prepare()

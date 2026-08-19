@@ -41,3 +41,27 @@ public struct WWActiveInformation {
         self.options = options
     }
 }
+
+/// 輕量級的音訊緩衝區包裝結構體，用於簡化音訊資料的存取與分析（例如計算音量）
+public struct WWAudioPCMBuffer {
+    
+    public let value: AVAudioPCMBuffer
+    
+    /// 建立 WWAudioPCMBuffer 實體
+    /// - Parameters:
+    ///   - value: 是否啟用音訊工作階段
+    ///   - options: 設定啟用狀態時的選項
+    public init(value: AVAudioPCMBuffer) {
+        self.value = value
+    }
+}
+
+// MARK: - 公開屬性
+public extension WWAudioPCMBuffer {
+    
+    /// 唯讀計算屬性：獲取目前音訊緩衝區的音幅（Amplitude，通常代表音量大小）
+    /// - Returns: 傳回一個可空值的浮點數（Float?）。如果原生緩衝區無法計算或尚未實作該擴充功能，則傳回 nil
+    public var amplitude: Float? {
+        value.amplitude
+    }
+}

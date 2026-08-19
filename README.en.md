@@ -74,7 +74,7 @@ private extension SpeechViewModel {
         }
         
         let microphone = WWMicrophoneInput { [weak transcription] buffer in
-            transcription?.append(buffer: buffer)
+            transcription?.append(buffer: buffer.value)
         }
         
         try microphone.configure()
