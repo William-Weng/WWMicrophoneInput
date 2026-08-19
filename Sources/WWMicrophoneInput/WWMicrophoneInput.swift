@@ -62,8 +62,11 @@ private extension WWMicrophoneInput {
     
     /// 內部啟動邏輯
     ///
+    /// 啟動 AVAudioEngine 並安裝麥克風輸入的 Tap，開始接收音訊資料
+    ///
+    /// - Parameter level: 緩衝區大小等級，預設為中等延遲（1024 frames）
     /// - Returns: 若發生錯誤則回傳對應的 WWMicrophoneInputError，否則回傳 nil
-    func start() -> WWMicrophoneInputError? {
+    func start(level: BufferFrameSizeLevel = .middle) -> WWMicrophoneInputError? {
         
         guard !isRunning else { return .isRunning }
         
@@ -74,7 +77,7 @@ private extension WWMicrophoneInput {
         
         inputNode.removeTap(onBus: 0)
         
-        inputNode.installTap(onBus: 0, bufferSize: 1_024, format: format) { [bufferHandler] buffer, _ in
+        inputNode.installTap(onBus: 0, bufferSize: level.value, format: format) { [bufferHandler] buffer, _ in
             bufferHandler(buffer)
         }
         

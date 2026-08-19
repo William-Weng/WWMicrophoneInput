@@ -38,7 +38,7 @@
 | --- | --- |
 | `init(bufferHandler:)` | 建立 WWMicrophoneInput 實體。 |
 | `configure(category:active:)` | 設定音訊工作階段（AVAudioSession）的類別、模式與選項，並設定是否啟用。 |
-| `start()` | 啟動麥克風輸入。 |
+| `start(level:)` | 啟動麥克風輸入。 |
 | `stop()` | 停止麥克風輸入。 |
 
 ## 📌 公開屬性

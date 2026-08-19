@@ -38,7 +38,7 @@ If this is a local package, you can also use in Xcode:
 | --- | --- |
 | `init(bufferHandler:)` | Creates a WWMicrophoneInput instance. |
 | `configure(category:active:)` | Configures the audio session (AVAudioSession) category, mode, and options, and sets whether to activate it. |
-| `start()` | Starts microphone input. |
+| `start(level:)` | Starts microphone input. |
 | `stop()` | Stops microphone input. |
 
 ## 📌 Public Properties
