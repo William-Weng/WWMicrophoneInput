@@ -26,6 +26,17 @@ public final class WWMicrophoneInput {
     }
 }
 
+// MARK: - Public Static API
+public extension WWMicrophoneInput {
+    
+    /// 請求麥克風錄音權限
+    ///
+    /// - Returns: 若使用者允許錄音則回傳 true，否則 false
+    static func requestAuthorization() async -> Bool {
+        await AVAudioApplication.requestRecordPermission()
+    }
+}
+
 // MARK: - Public API
 public extension WWMicrophoneInput {
     

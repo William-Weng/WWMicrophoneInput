@@ -36,6 +36,7 @@
 
 | API | 說明 |
 | --- | --- |
+| `requestAuthorization()` | 請求麥克風錄音權限。 |
 | `init(bufferHandler:)` | 建立 WWMicrophoneInput 實體。 |
 | `configure(category:active:)` | 設定音訊工作階段（AVAudioSession）的類別、模式與選項，並設定是否啟用。 |
 | `start(level:)` | 啟動麥克風輸入。 |

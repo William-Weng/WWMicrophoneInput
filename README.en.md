@@ -36,6 +36,7 @@ If this is a local package, you can also use in Xcode:
 
 | API | Description |
 | --- | --- |
+| `requestAuthorization()` | Requests microphone recording permission. |
 | `init(bufferHandler:)` | Creates a WWMicrophoneInput instance. |
 | `configure(category:active:)` | Configures the audio session (AVAudioSession) category, mode, and options, and sets whether to activate it. |
 | `start(level:)` | Starts microphone input. |
